@@ -1,0 +1,59 @@
+﻿<Window x:Class="slon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:slon"
+        mc:Ignorable="d"
+      Title="ОСАГО Калькулятор" Height="300" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Год рождения:"/>
+        <TextBox x:Name="BirthYearTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Год получения прав:"/>
+        <TextBox x:Name="LicenseYearTextBox" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Место жительства:"/>
+        <ComboBox x:Name="LocationComboBox" Grid.Row="2" Grid.Column="1" Margin="5">
+            <ComboBoxItem>Кузнецк</ComboBoxItem>
+            <ComboBoxItem>Пенза</ComboBoxItem>
+            <ComboBoxItem>Прочие города (Пензенская область)</ComboBoxItem>
+            <ComboBoxItem>Сызрань</ComboBoxItem>
+            <ComboBoxItem>Самара</ComboBoxItem>
+            <ComboBoxItem>Тольятти</ComboBoxItem>
+            <ComboBoxItem>Прочие города (Самарская область)</ComboBoxItem>
+            <ComboBoxItem>Димитровград</ComboBoxItem>
+            <ComboBoxItem>Ульяновск</ComboBoxItem>
+            <ComboBoxItem>Прочие города (Ульяновская область)</ComboBoxItem>
+        </ComboBox>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Категория ТС:"/>
+        <ComboBox x:Name="VehicleTypeComboBox" Grid.Row="3" Grid.Column="1" Margin="5">
+            <ComboBoxItem>Мотоциклы, мотороллеры (категории А)</ComboBoxItem>
+            <ComboBoxItem>Легковые автомобили (категории В)</ComboBoxItem>
+            <ComboBoxItem>Грузовые автомобили (категории С)</ComboBoxItem>
+        </ComboBox>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Мощность, л.с.:"/>
+        <TextBox x:Name="EnginePowerTextBox" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+        <Button x:Name="CalculateButton" Grid.Row="5" Grid.ColumnSpan="2" Content="Рассчитать" Margin="5" Click="CalculateButton_Click"/>
+
+        <Label Grid.Row="6" Grid.Column="0" Content="Стоимость ОСАГО:"/>
+        <TextBox x:Name="ResultTextBox" Grid.Row="6" Grid.Column="1" Margin="5" IsReadOnly="True"/>
+    </Grid>
+</Window>
